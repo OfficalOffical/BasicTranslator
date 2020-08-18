@@ -10,10 +10,10 @@
             var toNext = 'A';
             var i;
             init (main);
-            var str = document.getElementById("toTranslate").value;
-            document.getElementById("lolaley").value=str;
+            var temp = document.getElementById("toTranslate").value;
+            document.getElementById("toOutput").value = temp;
 
-
+            
             /*
             printIt(main);
             toAdd(main,"Apple","Elma");
@@ -29,6 +29,16 @@
 
         }
 
+        function translate(Tr){
+
+        }
+        function wordList(main){
+           /* toAdd(main,"Apple","Elma");
+            toAdd(main,"Orange","Portakal");
+            toAdd(main,"Sadfolo","thing");
+            toAdd(main,"Ewqrlo","thing");
+            toAdd(main,"Qzxcvo","thing");*/
+        }
         function nextCharacter(c) {
             return String.fromCharCode(c.charCodeAt(0) + 1);
         }
@@ -39,6 +49,7 @@
                 a[[[i],[0],[0]]]=toNext;
                 toNext = nextCharacter(toNext); //A,B
             }
+           // wordList(a);
         }
 
         function printIt(a) {
@@ -60,12 +71,10 @@
         }
 
     </script>
-    <body>
     <input id="toTranslate" placeholder="Turkish">
-    </body>
-
     <button type="button" onclick=  "myfunction()"    >Submit</button>
     <input id="toOutput">
+
 </head>
 </html>
 
