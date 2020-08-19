@@ -11,9 +11,10 @@
             var i;
             init (main);
             var temp = document.getElementById("toTranslate").value;
+            translate(main,temp);
             document.getElementById("toOutput").value = temp;
 
-            
+
             /*
             printIt(main);
             toAdd(main,"Apple","Elma");
@@ -23,13 +24,15 @@
             toAdd(main,"Qzxcvo","thing");
 
             console.log(main[[[0],[1],[0]]]);
-            console.log(main[[[0],[1],[1]]]);*/ //toTest
+            console.log(main[[[0],[1],[1]]]);
+
+            */ //toTest
 
 
 
         }
 
-        function translate(Tr){
+        function translate(Array,Var){
 
         }
         function wordList(main){
@@ -58,22 +61,23 @@
             }
         }
         function toAdd(a,englishInput,turkishInput) {
-            var temp;
+
             for(i = 0; i < 26;i++){
                if (a[[[i],[0],[0]]] == englishInput.charAt(0)){
                    a[[[i],[globalMark],[0]]] = englishInput;
                    a[[[i],[globalMark],[1]]] = turkishInput;
                    globalMark++;
+
                }
             }
-          /*  temp++;
-            console.log(temp);*/
+            /*Need to be improved by putting inputs in alphabetic order like A should be in [0] cs [0] stands
+                  for A, [1] is for B, [2] is for [C] etc. And make it putting sorted                              */
         }
 
     </script>
     <input id="toTranslate" placeholder="Turkish">
     <button type="button" onclick=  "myfunction()"    >Submit</button>
-    <input id="toOutput">
+    <input id="toOutput" placeholder="English">
 
 </head>
 </html>
