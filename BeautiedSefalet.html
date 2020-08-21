@@ -1,0 +1,112 @@
+<
+!DOCTYPE html >
+    <
+    html >
+    <
+    head >
+    <
+    script >
+    var globalMark = 1;
+
+function myfunction() {
+    var main = [
+        [
+            []
+        ],
+        [
+            []
+        ],
+        [
+            []
+        ]
+    ];
+    var toNext = 'A';
+    var i;
+    init(main);
+    var str = document.getElementById("toTranslate").value;
+    document.getElementById("lolaley").value = str;
+
+
+    /*
+    printIt(main);
+    toAdd(main,"Apple","Elma");
+    toAdd(main,"Orange","Portakal");
+    toAdd(main,"Sadfolo","thing");
+    toAdd(main,"Ewqrlo","thing");
+    toAdd(main,"Qzxcvo","thing");
+
+    console.log(main[[[0],[1],[0]]]);
+    console.log(main[[[0],[1],[1]]]);*/ //toTest
+
+
+
+}
+
+function nextCharacter(c) {
+    return String.fromCharCode(c.charCodeAt(0) + 1);
+}
+
+function init(a) {
+    var toNext = 'A';
+    for (i = 0; i < 26; i++) {
+        a[[
+            [i],
+            [0],
+            [0]
+        ]] = toNext;
+        toNext = nextCharacter(toNext); //A,B
+    }
+}
+
+function printIt(a) {
+    for (i = 0; i < 26; i++) {
+        console.log(a[[
+            [i],
+            [0],
+            [0]
+        ]]);
+    }
+}
+
+function toAdd(a, englishInput, turkishInput) {
+    var temp;
+    for (i = 0; i < 26; i++) {
+        if (a[[
+                [i],
+                [0],
+                [0]
+            ]] == englishInput.charAt(0)) {
+            a[[
+                [i],
+                [globalMark],
+                [0]
+            ]] = englishInput;
+            a[[
+                [i],
+                [globalMark],
+                [1]
+            ]] = turkishInput;
+            globalMark++;
+        }
+    }
+    /*  temp++;
+      console.log(temp);*/
+}
+
+<
+/script> <
+body >
+    <
+    input id = "toTranslate"
+placeholder = "Turkish" >
+    <
+    /body>
+
+    <
+    button type = "button"
+onclick = "myfunction()" > Submit < /button> <
+    input id = "toOutput"
+placeholder = "English" >
+    <
+    /head> <
+    /html>
