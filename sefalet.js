@@ -5,7 +5,9 @@
 <head>
     <script>
         var globalMark = 1;
+        var cupHolder = [26];
         function myfunction() {
+
             var main = [ [[]], [[]], [[]]];
             var toNext = 'A';
             var i;
@@ -13,20 +15,12 @@
             var temp = document.getElementById("toTranslate").value;
             translate(main,temp);
             document.getElementById("toOutput").value = temp;
+            wordList(main);
 
-
-            /*
             printIt(main);
-            toAdd(main,"Apple","Elma");
-            toAdd(main,"Orange","Portakal");
-            toAdd(main,"Sadfolo","thing");
-            toAdd(main,"Ewqrlo","thing");
-            toAdd(main,"Qzxcvo","thing");
 
-            console.log(main[[[0],[1],[0]]]);
-            console.log(main[[[0],[1],[1]]]);
 
-            */ //toTest
+
 
 
 
@@ -35,12 +29,15 @@
         function translate(Array,Var){
 
         }
+
         function wordList(main){
-           /* toAdd(main,"Apple","Elma");
+            toAdd(main,"Apple","Elma");
+            toAdd(main,"Applet","Elmsa");
+            toAdd(main,"Appdle","Eslma");
             toAdd(main,"Orange","Portakal");
             toAdd(main,"Sadfolo","thing");
             toAdd(main,"Ewqrlo","thing");
-            toAdd(main,"Qzxcvo","thing");*/
+            toAdd(main,"Qzxcvo","thing");
         }
         function nextCharacter(c) {
             return String.fromCharCode(c.charCodeAt(0) + 1);
@@ -51,23 +48,26 @@
             for(i = 0; i<26;i++){
                 a[[[i],[0],[0]]]=toNext;
                 toNext = nextCharacter(toNext); //A,B
+                cupHolder[i]=1; // like memset just to be sure there's no memory flow
             }
+
            // wordList(a);
         }
 
         function printIt(a) {
             for(i = 0; i<26;i++){
-                console.log(a[[[i],[0],[0]]]);
+                console.log(a[[[i],[1],[0]]]);
             }
         }
         function toAdd(a,englishInput,turkishInput) {
 
             for(i = 0; i < 26;i++){
-               if (a[[[i],[0],[0]]] == englishInput.charAt(0)){
-                   a[[[i],[globalMark],[0]]] = englishInput;
-                   a[[[i],[globalMark],[1]]] = turkishInput;
-                   globalMark++;
 
+               if (a[[[i],[0],[0]]] == englishInput.charAt(0)){
+                   a[[[i],[cupHolder[i]],[0]]] = englishInput;
+                   a[[[i],[cupHolder[i]],[1]]] = turkishInput;
+                   cupHolder[[i]]++;
+                   console.log(cupHolder[[i]]);
                }
             }
             /*Need to be improved by putting inputs in alphabetic order like A should be in [0] cs [0] stands
