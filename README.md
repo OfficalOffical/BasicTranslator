@@ -1,3 +1,3 @@
 # BasicTranslator
 Translator in JS for preps : 
-https://sefakalkan.com/testing/
+https://sefakalkan.com/Translator.html
